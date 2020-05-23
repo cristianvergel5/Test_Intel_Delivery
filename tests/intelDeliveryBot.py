@@ -92,7 +92,7 @@ class intelDelivery():
         
 def main():
     intelDeliveryPage = intelDelivery()
-    print("IntelDeliveryLogin: :", intelDeliveryPage.signIn('cristianvergel5@gmail.com', 'cristianvergel'))
+    print("IntelDeliveryLogin: :", intelDeliveryPage.signIn('cristianvergel', 'cristianvergel'))
     print("IntelDeliverySignOut: ", intelDeliveryPage.signOut())
     print("IntelDeliveryCancel: ", intelDeliveryPage.cancelDelivery())
     print("IntelDeliveryPayment: ", intelDeliveryPage.PaymentDelivery())
