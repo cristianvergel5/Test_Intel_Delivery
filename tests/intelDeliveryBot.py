@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 import math, time
 from Locators import *
-from secrets import infoCard
+
 
 
 class intelDelivery():
@@ -84,10 +84,31 @@ class intelDelivery():
             self.driver.find_element(*IntelDeliveryPaymentPage.card_next_btn).click()
             time.sleep(2)
             self.driver.find_element(*IntelDeliveryPaymentPage.take_order).click()
-
+            
             return True
         return False
+    
+    def addOrder(self):
+        if self.login_state:
+            self.driver.find_element(*InteldeliveryAddOrder.add_order_btn).click()
+            time.sleep(2)
 
+            address = self.driver.find_element(*InteldeliveryAddOrder.address1)
+            city = self.driver.find_element(*InteldeliveryAddOrder.city)
+            region = self.driver.find_element(*InteldeliveryAddOrder.region)
+            postal_code = self.driver.find_element(*InteldeliveryAddOrder.postal_code)
+            
+
+            address.send_keys(*infoNewOrder.address)
+            city.send_keys(*infoNewOrder.city)
+            region.send_keys(*infoNewOrder.region)
+            postal_code.send_keys(*infoNewOrder.postal_code)
+            time.sleep(2)
+
+            self.driver.find_element(*InteldeliveryAddOrder.registrer_btn).click()
+            #self.driver.find_element(*InteldeliveryAddOrder.accept_btn).click()
+            return True
+        return False
 
         
 def main():
