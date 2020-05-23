@@ -22,6 +22,15 @@ class IntelDeliveryPaymentPage(object):
     expiration_date_card = (By.CSS_SELECTOR, '#expDate')
     cvv_card = (By.CSS_SELECTOR, '#cvv')
 
+class InteldeliveryAddOrder(object):
+    add_order_btn = (By.CSS_SELECTOR, '#create_delovery_btn > span.MuiIconButton-label > svg')
+    registrer_btn = (By.CSS_SELECTOR, '#registrer_btn > span.MuiButton-label')
+    accept_btn = (By.XPATH, '/html/body/div[2]/div[3]/div/div[3]/button/span[1]')
+    address1 = (By.CSS_SELECTOR, '#address1')
+    city = (By.CSS_SELECTOR, '#city')
+    region = (By.CSS_SELECTOR, '#region')
+    postal_code = (By.CSS_SELECTOR, '#postal_code')
+
 class infoCard(object):
     firstname = 'Cristian'
     lastname = 'Vergel'
@@ -29,4 +38,11 @@ class infoCard(object):
     date_card = '04/24'
     cvv = '078'
 
+class infoNewOrder(object):
+    address = 'Calle 35 #74-94'
+    city = 'Santa Marta'
+    region = 'Magdalena'
+    postal_code = '470003'
 
+
+    
