@@ -5,8 +5,6 @@ from selenium.common.exceptions import TimeoutException
 import math, time
 from Locators import *
 
-
-
 class intelDelivery():
 
     def __init__(self, time_to_wait=5):
@@ -110,13 +108,19 @@ class intelDelivery():
             return True
         return False
 
-        
+    def orderDate(self):
+        if self.login_state:
+            if self.driver.find_element(*InteldeliveryOrderDate.date_btn).send_keys(Keys.RETURN):
+                return True
+        return False
+
 def main():
     intelDeliveryPage = intelDelivery()
     print("IntelDeliveryLogin: :", intelDeliveryPage.signIn('cristianvergel', 'cristianvergel'))
     print("IntelDeliverySignOut: ", intelDeliveryPage.signOut())
     print("IntelDeliveryCancel: ", intelDeliveryPage.cancelDelivery())
     print("IntelDeliveryPayment: ", intelDeliveryPage.PaymentDelivery())
+    print("IntelDeliveryDate: ", intelDeliveryPage.orderDate())
     
 
 if __name__ == "__main__":
