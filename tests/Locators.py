@@ -32,8 +32,10 @@ class InteldeliveryAddOrder(object):
     postal_code = (By.CSS_SELECTOR, '#postal_code')
 
 class InteldeliveryOrderDate(object):
-    date_btn = (By.CSS_SELECTOR, '#datePicker')
-    info = '2019-12-05'
+    date_picker_btn_one = (By.CSS_SELECTOR, '#datePicker1')
+    date_picker_btn_two = (By.CSS_SELECTOR, '#datePicker2')
+    date_one = '2019-01-15'
+    date_two = '2020-01-15'
 
 class infoCard(object):
     firstname = 'Cristian'

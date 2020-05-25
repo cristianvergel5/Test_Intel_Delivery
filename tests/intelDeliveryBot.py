@@ -82,7 +82,8 @@ class intelDelivery():
             self.driver.find_element(*IntelDeliveryPaymentPage.card_next_btn).click()
             time.sleep(2)
             self.driver.find_element(*IntelDeliveryPaymentPage.take_order).click()
-            
+            if "gracias por tu orden" in self.driver.page_source:
+                return True           
             return True
         return False
     
@@ -104,13 +105,22 @@ class intelDelivery():
             time.sleep(2)
 
             self.driver.find_element(*InteldeliveryAddOrder.registrer_btn).click()
-            #self.driver.find_element(*InteldeliveryAddOrder.accept_btn).click()
-            return True
+            if "su pedido ha sido creado exitosamente!" in self.driver.page_source:
+                return True
         return False
 
     def orderDate(self):
         if self.login_state:
-            if self.driver.find_element(*InteldeliveryOrderDate.date_btn).send_keys(Keys.RETURN):
+            self.driver.find_element(*InteldeliveryOrderDate.date_picker_btn_one).send_keys(Keys.RETURN)
+            self.driver.find_element(*InteldeliveryOrderDate.date_picker_btn_two).send_keys(Keys.RETURN)
+            
+            date_one = self.driver.find_element(*InteldeliveryOrderDate.date_picker_btn_one)
+            date_two = self.driver.find_element(*InteldeliveryOrderDate.date_picker_btn_two)
+            
+            date_one.send_keys(*InteldeliveryOrderDate.date_one)
+            date_two.send_keys(*InteldeliveryOrderDate.date_two)
+            
+            if "No hay domicilios que entregar." in self.driver.page_source:
                 return True
         return False
 
@@ -121,6 +131,7 @@ def main():
     print("IntelDeliveryCancel: ", intelDeliveryPage.cancelDelivery())
     print("IntelDeliveryPayment: ", intelDeliveryPage.PaymentDelivery())
     print("IntelDeliveryDate: ", intelDeliveryPage.orderDate())
+
     
 
 if __name__ == "__main__":
