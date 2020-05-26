@@ -1,3 +1,5 @@
+![GitHub top language](https://github.com/cristianvergel5/Test_Intel_Delivery.git)
+
 
 # Test Intel Delivery
 In this repository you will find the automated tests of the "Intel delivery" project.
