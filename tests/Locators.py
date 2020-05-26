@@ -7,7 +7,7 @@ class InteldeliveryLoginPage(object):
 
 class InteldeliveryManagePage(object):
     menu_link = (By.CSS_SELECTOR, '#root > div.makeStyles-root-357 > header > div > button > span.MuiIconButton-label > svg > path')
-    sign_out_btn = (By.CSS_SELECTOR, 'body > div.MuiDrawer-root.MuiDrawer-modal > div.MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiPaper-elevation16 > div > ul:nth-child(3) > a:nth-child(2) > div.MuiListItemText-root > span')
+    sign_out_btn = (By.CSS_SELECTOR, 'body > div.MuiDrawer-root.MuiDrawer-modal > div.MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiPaper-elevation16 > div > ul:nth-child(3) > a > div.MuiListItemIcon-root')
     cancel_btn = (By.CSS_SELECTOR, 'div.MuiPaper-root:nth-child(2) > div:nth-child(2) > div:nth-child(2) > button:nth-child(1) > span:nth-child(1) > svg:nth-child(1)')
     cancel_btn_confirm = (By.XPATH, '/html/body/div[4]/div[3]/div/div[3]/button[2]/span[1]')
 
